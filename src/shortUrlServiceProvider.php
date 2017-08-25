@@ -1,10 +1,10 @@
 <?php
 
-namespace Xbb\shortUrl;
+namespace Xbb\ShortUrl;
 
 use Illuminate\Support\ServiceProvider;
 
-class shortUrlServiceProvider extends ServiceProvider
+class ShortUrlServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.

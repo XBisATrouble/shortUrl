@@ -5,7 +5,7 @@
  * Date: 2017/8/25
  * Time: 9:58
  */
-namespace Xbb\shortUrl;
+namespace Xbb\ShortUrl;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class shortUrl
  * @package Xbb\shortUrl
  */
-class shortUrl extends Model
+class ShortUrl extends Model
 {
     protected $table='urls';
     protected $fillable=['url','hash','count'];
@@ -39,9 +39,9 @@ class shortUrl extends Model
      * @param $shortUrl
      * @return bool
      */
-    public function hitUrl($shortUrl)
+    public function hitUrl($shortUrlHash)
     {
-        $urlId=$this->from62_to10($shortUrl);
+        $urlId=$this->from62_to10($shortUrlHash);
         $url=self::where('id',$urlId)->first();
         if (!$url){
             return false;

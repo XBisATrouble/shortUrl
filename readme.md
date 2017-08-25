@@ -12,13 +12,13 @@ $ composer require xbb/shorturl
 1. 添加下面一行到 `config/app.php` 中 `providers` 部分：
 
     ```php
-    Xbb\shortUrl\shortUrlServiceProvider::class,
+    Xbb\ShortUrl\ShortUrlServiceProvider::class,
     ```
 
 2. 发布迁移文件
 
     ```php
-    $ php artisan vendor:publish --provider='Xbb\shortUrl\shortUrlServiceProvider'
+    $ php artisan vendor:publish --provider='Xbb\ShortUrl\ShortUrlServiceProvider'
     ```
 
 3. 迁移数据库表
@@ -27,11 +27,14 @@ $ composer require xbb/shorturl
     $ php artisan migrate
     ```
 
-4. 使用
+## 使用
 
+1. 生成
     ```php
     app('shortUrl')->makeShortUrl($url);
  
+2. 跳转
+    ```php
     header('Location:'.app('shortUrl')->hit($shortUrl));
     ```
 
